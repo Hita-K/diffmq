@@ -22,6 +22,23 @@ From a skim of the paper, it seems like the people surveyed had improved nasal a
 
 ![img of research paper with highlight](/paper-memory.png)
 
+====== 
+
+** new, unfleshed ideas **
+
+Patients can navigate between lived experiences and authoritative information:
+
+![compare](/compare.png)
+
+Patients can follow *embedded linkages* between answer and source.
+
+![results](/results.png)
+
+Patients can filter searches across time.
+
+![time](/time.png)
+
+
 Through embedded attributions, the system can match the lived experiences with the experimental results from authoritative, theoretical sources such as medical literature.
 
 
