@@ -6,40 +6,36 @@ Some people might turn to Internet search [McMullan 2006] or, more recently, cha
 
 How could we tie together the strengths of both traditional and AI-assisted search engines to better support patients' health information needs?
 
-Let's walk through an example of how such a system could help a patient answer the following question: ``Will an adenoidectomy cure my chronic sniffling?'' using embedded attributions.
+In our formative study, we find that patients consult two principal collections of information sources: lived experiences of patients with similar conditions as them and authoritative theory on the conditions themselves. Patients often consulted Reddit to meet information needs relating to the former category, and research articles for the latter. We identify a few key interaction opportunities for sythesizing information across these collections--lived experiences and authoritative theory.
 
-An initial system response might state ``According to a 2021 study, there was a systematic decrease in nasal resistance and increase in nasal airflow after an adenoidectomy.''
+Namely, a system to help patients answer difficult medical questions would allow for:
 
-A patient can easily access salient metadata of the [study](https://www.sciencedirect.com/science/article/abs/pii/S0165587621003621) to check its trustworthiness, and jump to the corresponding sections of the original paper easily, rather than having to read the entire paper.
+1) Transitioning from lived experiences to theory (and vice versa) - In-situ annotations of supporting evidence from relevant lived experiences or theory
+2) Checking a generated answer's origin - Verifiable in-context highlights at a sentence, section, and document level
+3) Finding differentiation between documents - Comparision across collections of documents based on user-selected dimensions
 
-![img of research paper](/attribution.png)
+Design choice (1) can broadly be described as inter-document linking, (2) as hyper-attributions, and (3) as overviews.
 
-However, the question remains if the paper is relevant.
+Let's walk through an example of how such a system could help a patient answer the following question: ``Will an adenoidectomy cure my chronic sniffling?''.
 
-![img of research paper](/paper-ref1.png)
+An initial system response might state ``Research suggests that this procedure is commonly performed to alleviate symptoms associated with nasal obstruction and recurrent ear infections, which can contribute to chronic sniffling.''
 
-From a skim of the paper, it seems like the people surveyed had improved nasal airflow following the adenoidectomy. But a patient might want to know whether other patients would recommend the surgery, particularly comparing the experiences of patients with big adenoids compared to small ones. To help a patient quickly glean the valences and content of other patients' experiences, they could take a look at different patient testimonials and highlight what parts of the testimonial corresponds to their present situation, updating the system's understanding of the patient's condition.
+A patient can view research papers that provide relevant findings to the question and support the generated answer in a table format. Patients can select what relevant sections of the paper they would like to use for comparision (i.e. results, methods, objectives)
 
-![img of research paper with highlight](/paper-memory.png)
+In order to quickly glean the similarities and differences across papers, a patient can select a paper to anchor their search, and similarities and differences between the anchored paper and all other papers are highlighted in green and red respectively. An example is shown below of a patient comparing the results from one paper across others:
 
-====== 
-
-** new, unfleshed ideas **
-
-Patients can navigate between lived experiences and authoritative information:
-
-![compare](/compare.png)
-
-Patients can follow *embedded linkages* between answer and source.
-
-![results](/results.png)
-
-Patients can filter searches across time.
-
-![time](/time.png)
+![differing table](/differentiation.png)
 
 
-Through embedded attributions, the system can match the lived experiences with the experimental results from authoritative, theoretical sources such as medical literature.
+However, the question remains if the paper is relevant. From a skim of the paper, it seems like the people surveyed had improved nasal airflow following the adenoidectomy. But a patient might want to know whether other patients would recommend the surgery, particularly comparing the experiences of patients with big adenoids compared to small ones. To help a patient quickly glean the valences and content of other patients' experiences, they could highlight a claim in the paper and view short gists and corresponding Reddit posts of patients' experiences.
+
+![img of research paper with highlight](/testim.png)
+
+In order to support rapid verification of generated claims, patients can "zoom in" to find more comprehensive linkages that clarify which sections and phrases pertain to which specific sections of the generated answer. Below is a representative example of a 1-to-1 claim-to-paper linkage. This feature can be scaled to include multiple papers.
+
+![tracing](/tracing.png)
+
+Through inter-document linking, hyper-attributions, and overviews, the system can match the lived experiences with the experimental results from authoritative, theoretical sources such as medical literature.
 
 
 References:
